@@ -278,6 +278,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nzK-9J-BMJ" id="AmL-CP-tXO"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEU-NY-got">
                                 <rect key="frame" x="152" y="183" width="71" height="21"/>
@@ -317,6 +320,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oZv-l1-1hM"/>
                     <connections>
+                        <outlet property="login" destination="Zvp-ef-iMb" id="QE3-ww-8I1"/>
                         <outlet property="passwordField" destination="2kf-W2-tph" id="2ZY-gK-qQH"/>
                         <outlet property="usernameField" destination="3jE-F4-u9B" id="jNr-rq-Hkm"/>
                         <outlet property="welcomeLabel" destination="BEU-NY-got" id="GkJ-Sh-wJY"/>
