@@ -81,10 +81,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             case passwordField:
                 loginTapped(login)
             default:
-                self.view.endEditing(true)
+                textField.resignFirstResponder()
         }
         
         return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     // END-UOC-1
 }
