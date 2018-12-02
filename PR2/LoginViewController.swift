@@ -80,7 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case usernameField:
             passwordField.becomeFirstResponder()
         case passwordField:
-            self.loginTapped(login)
+            loginTapped(login)
         default:
             textField.resignFirstResponder()
         }
