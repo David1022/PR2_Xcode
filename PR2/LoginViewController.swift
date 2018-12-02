@@ -72,18 +72,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // BEGIN-UOC-1
-    
     @IBOutlet weak var login: UIButton!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case usernameField:
-            passwordField.becomeFirstResponder()
-        case passwordField:
-            loginTapped(login)
-        default:
-            textField.resignFirstResponder()
+            case usernameField:
+                passwordField.becomeFirstResponder()
+            case passwordField:
+                loginTapped(login)
+            default:
+                self.view.endEditing(true)
         }
+        
         return false
     }
     // END-UOC-1

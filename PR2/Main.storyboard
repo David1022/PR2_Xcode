@@ -427,6 +427,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                 <connections>
+                                    <action selector="secondFieldEditingChanged:" destination="qWi-qB-46D" eventType="editingChanged" id="dlk-9t-Pkl"/>
                                     <outlet property="delegate" destination="qWi-qB-46D" id="fLS-6l-8RI"/>
                                 </connections>
                             </textField>
@@ -439,6 +440,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                 <connections>
+                                    <action selector="thirdFieldEditingChanged:" destination="qWi-qB-46D" eventType="editingChanged" id="Umz-2V-9Ts"/>
                                     <outlet property="delegate" destination="qWi-qB-46D" id="O5P-Sn-YHI"/>
                                 </connections>
                             </textField>
@@ -451,6 +453,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                 <connections>
+                                    <action selector="fourthFieldEditingChanged:" destination="qWi-qB-46D" eventType="editingChanged" id="RzV-UB-MNJ"/>
                                     <outlet property="delegate" destination="qWi-qB-46D" id="Pte-a5-xQH"/>
                                 </connections>
                             </textField>
@@ -492,6 +495,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                 <connections>
+                                    <action selector="firstFieldEditingChanged:" destination="qWi-qB-46D" eventType="editingChanged" id="1L1-gE-QkV"/>
                                     <outlet property="delegate" destination="qWi-qB-46D" id="4qd-gr-mbB"/>
                                 </connections>
                             </textField>

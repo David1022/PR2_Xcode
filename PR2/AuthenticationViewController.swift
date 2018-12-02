@@ -61,6 +61,20 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     }
     
     // BEGIN-UOC-2
+    @IBAction func firstFieldEditingChanged(_ sender: Any) {
+        secondField.becomeFirstResponder()
+    }
     
+    @IBAction func secondFieldEditingChanged(_ sender: Any) {
+        thirdField.becomeFirstResponder()
+    }
+    
+    @IBAction func thirdFieldEditingChanged(_ sender: Any) {
+        fourthField.becomeFirstResponder()
+    }
+    
+    @IBAction func fourthFieldEditingChanged(_ sender: Any) {
+        doAuthentication()
+    }
     // END-UOC-2
 }
