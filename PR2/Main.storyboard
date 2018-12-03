@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovementCell" rowHeight="75" id="nMk-1M-k5e">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovementCell" rowHeight="75" id="nMk-1M-k5e" customClass="MovementCell" customModule="PR2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nMk-1M-k5e" id="HQ2-NA-ViA">
@@ -144,6 +144,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="amountCell" destination="ISx-Qu-Ipo" id="wwM-KQ-gkp"/>
+                                    <outlet property="dateCell" destination="CNI-zh-2Lj" id="89P-F8-HRG"/>
+                                    <outlet property="descriptionCell" destination="HQ2-NA-ViA" id="Thx-5l-56d"/>
                                     <segue destination="qNi-wx-B3h" kind="show" identifier="SegueToMovementDetail" id="axa-vJ-SkQ"/>
                                 </connections>
                             </tableViewCell>
