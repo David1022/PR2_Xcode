@@ -79,6 +79,38 @@ class MovementsListViewController: UITableViewController {
     // END-UOC-5
     
     // BEGIN-UOC-7
+    @IBOutlet var table: UITableView!
+    
+    @IBAction func filterMovementsList(_ sender: UISegmentedControl) {
+        movements = Services.getMovements()
+        switch sender.selectedSegmentIndex {
+            case 0:
+                table.reloadData()
+            case 1:
+                movements = applyFilter(category: "Transfers")
+                self.table.reloadData()
+            case 2:
+                movements = applyFilter(category: "Credit cards")
+                self.table.reloadData()
+            case 3:
+                movements = applyFilter(category: "Direct debits")
+                self.table.reloadData()
+            default:
+                table.reloadData()
+        }
+    }
+    
+    func applyFilter(category: String) -> [Movement]{
+        var filteredList: [Movement] = []
+        for item in movements {
+            if item.category.elementsEqual(category) {
+                filteredList.append(item)
+            }
+        }
+        
+        return filteredList
+    }
+    
     // END-UOC-7
     
     // BEGIN-UOC-8.1
