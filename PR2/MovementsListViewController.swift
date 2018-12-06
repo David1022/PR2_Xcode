@@ -67,6 +67,8 @@ class MovementsListViewController: UITableViewController {
     func getFormattedAmount(amountToFormat amount: Decimal) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
+        formatter.decimalSeparator = ","
+        formatter.groupingSeparator = "."
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         
@@ -114,6 +116,22 @@ class MovementsListViewController: UITableViewController {
     // END-UOC-7
     
     // BEGIN-UOC-8.1
+    var selectedMovement: Movement?
+
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedMovement = movements[indexPath.row]
+        
+        return indexPath
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "SegueToMovementDetail") {
+            let movementDetailVC = segue.destination as! MovementDetailViewController
+            if let detailMovement = selectedMovement {
+                movementDetailVC.movement = detailMovement
+            }
+        }
+    }
     // END-UOC-8.1
     
     override func viewWillAppear(_ animated: Bool) {

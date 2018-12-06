@@ -656,6 +656,13 @@
                             <constraint firstItem="EmV-fd-YqX" firstAttribute="top" secondItem="tIW-iy-cW6" secondAttribute="bottom" constant="20" id="z19-ey-gOL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accountBalance" destination="mfT-5d-M3H" id="CJx-jk-onJ"/>
+                        <outlet property="amount" destination="tIW-iy-cW6" id="01A-Ku-vhk"/>
+                        <outlet property="date" destination="Mud-8P-m4l" id="ixa-U4-LKR"/>
+                        <outlet property="detailDescription" destination="EmV-fd-YqX" id="MYJ-fr-Gtd"/>
+                        <outlet property="valueDate" destination="R9R-z6-qMm" id="iEg-zi-w3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mzx-hl-rQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
