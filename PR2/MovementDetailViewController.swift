@@ -85,7 +85,7 @@ class MovementDetailViewController: UIViewController {
         rejectButton.setTitle("Reject", for: .normal)
         rejectButton.setTitleColor(.blue, for: .normal)
         rejectButton.setTitleColor(UIColor.blue.lighter(), for: .highlighted)
-        rejectButton.addTarget(self, action: #selector (actionButton), for: .touchUpInside)
+        rejectButton.addTarget(self, action: #selector(rejectAction(sender:)), for: .touchUpInside)
         
         view.addSubview(rejectButton)
         
@@ -94,12 +94,9 @@ class MovementDetailViewController: UIViewController {
         rejectButton.topAnchor.constraint(equalTo: accountBalance.bottomAnchor, constant: 20).isActive = true
     }
 
-    @objc func actionButton() {
+    @objc func rejectAction(sender: UIButton!) {
         movement.rejected = true
-        rejectAction(sender: rejectButton)
-    }
-    
-    func rejectAction(sender: UIButton!) {
+
         if let navigationController = self.navigationController {
             navigationController.popViewController(animated: true)
         }
