@@ -61,6 +61,10 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     }
     
     // BEGIN-UOC-2
+    override func viewDidAppear(_ animated: Bool) {
+        firstField.becomeFirstResponder()
+    }
+    
     @IBAction func firstFieldEditingChanged(_ sender: Any) {
         secondField.becomeFirstResponder()
     }

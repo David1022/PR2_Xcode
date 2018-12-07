@@ -74,6 +74,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // BEGIN-UOC-1
     @IBOutlet weak var login: UIButton!
     
+    override func viewDidAppear(_ animated: Bool) {
+        usernameField.becomeFirstResponder()
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
             case usernameField:
