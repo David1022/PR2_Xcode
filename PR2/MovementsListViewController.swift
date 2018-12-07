@@ -45,6 +45,12 @@ class MovementsListViewController: UITableViewController {
             cell.amountCell.text = getFormattedAmount(amountToFormat: amount)
             
             changeAmountLabelColorIfNeeded(amount, cell)
+            
+            if movements[indexPath.row].rejected {
+                cell.backgroundColor = UIColor.orange.lighter()
+            } else {
+                cell.backgroundColor = nil
+            }
             return cell
         }
     }

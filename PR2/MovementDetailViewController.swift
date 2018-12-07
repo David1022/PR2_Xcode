@@ -31,7 +31,7 @@ class MovementDetailViewController: UIViewController {
         if movement.balance < 0 {
             accountBalance.textColor = UIColor.red
         }
-    }
+            }
     
     func getFormattedDate(dateToFormat date: Date) -> String {
         let formatter = DateFormatter()
@@ -58,7 +58,48 @@ class MovementDetailViewController: UIViewController {
     // END-UOC-8.2
     
     // BEGIN-UOC-9
-    func rejectAction(sender: UIButton!) {        
+    var rejectButton: UIButton = UIButton()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if movement.rejected {
+            addRejectedText()
+        } else {
+            addButtonToReject()
+        }
+    }
+    func addRejectedText() {
+        let rejectedText = UILabel()
+        
+        rejectedText.text = "Rejected"
+        rejectedText.textColor = UIColor.red
+        rejectedText.font = UIFont.systemFont(ofSize: 17.0)
+        
+        view.addSubview(rejectedText)
+        
+        rejectedText.translatesAutoresizingMaskIntoConstraints = false
+        rejectedText.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rejectedText.topAnchor.constraint(equalTo: accountBalance.bottomAnchor, constant: 20).isActive = true
+    }
+    
+    func addButtonToReject() {
+        rejectButton.setTitle("Reject", for: .normal)
+        rejectButton.setTitleColor(.blue, for: .normal)
+        rejectButton.setTitleColor(UIColor.blue.lighter(), for: .highlighted)
+        rejectButton.addTarget(self, action: #selector (actionButton), for: .touchUpInside)
+        
+        view.addSubview(rejectButton)
+        
+        rejectButton.translatesAutoresizingMaskIntoConstraints = false
+        rejectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rejectButton.topAnchor.constraint(equalTo: accountBalance.bottomAnchor, constant: 20).isActive = true
+    }
+
+    @objc func actionButton() {
+        movement.rejected = true
+        rejectAction(sender: rejectButton)
+    }
+    
+    func rejectAction(sender: UIButton!) {
         if let navigationController = self.navigationController {
             navigationController.popViewController(animated: true)
         }
